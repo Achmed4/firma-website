@@ -1,0 +1,217 @@
+/* Main
+========================================================================== */
+
+html {    
+    box-sizing: border-box;
+    font-size: 16px;    
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;    
+}
+
+.page-container {
+    display: flex;
+    height: 100vh;
+    padding: 50px;
+}
+
+/* Image like background cover */
+.cover {
+    overflow: hidden;
+}
+
+.cover img {
+    position: absolute;
+    left:-10000%; right: -10000%; 
+    top: -10000%; bottom: -10000%;
+    margin: auto auto;
+    min-width: 1000%;
+    min-height: 1000%;
+    transform: scale(0.1);
+}
+/* Image like background contain */
+.contain img {
+    position: absolute;
+    left:-10000%; right: -10000%; 
+    top: -10000%; bottom: -10000%;
+    margin: auto auto;
+    max-width: 10%;
+    max-height: 10%;
+    transform: scale(10);
+}
+
+/* Clearing Floats */
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Layouts */
+.w25 {
+    width: calc(25% - 4px);
+}
+
+.w50 {
+    width: calc(50% - 4px);
+}
+
+.w100 {
+    width: calc(100% - 4px);
+}
+
+.h25 {
+    height: 25%;
+}
+
+.h50 {
+    height: 50%;
+}
+
+.h100 {
+    height: 100%;
+}
+
+/* Aside
+========================================================================== */
+aside {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Footer */
+footer p {
+    margin-bottom: 0;
+    font-size: 0.7em;
+    color: #999999;
+}
+
+footer p:last-child {
+    margin-top: 15px;
+}
+
+/* Main Wrapper
+========================================================================== */
+.main-wrapper {
+    width: 100%;
+    overflow-y: auto;  
+}
+
+/* Page Header */
+header {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+header a:hover {
+    text-decoration: none;
+}
+
+.page-title, .page-title:hover {
+    color: black;
+}
+
+/* Filter Links */
+.filter-list {
+    display: flex;
+}
+
+.filter-list__item {
+    margin-left: 40px;
+}
+
+.filter-list__item a {
+    color: #999;
+}
+
+.filter-list__item a:hover {
+    color: black;
+}
+
+.filter-list__item.active a {
+    color: black;
+}
+
+/* Projects Grid */
+main, .projects-grid {
+    width: 100%;
+}
+
+main {
+    height: calc(100% - 50px);
+}
+
+.projects-grid {
+    height: calc(100% - 4px);
+    padding: 0 2px;
+}
+
+.projects-grid__item {
+    position: relative;
+    margin: 0 2px 4px;
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+}
+
+.projects-grid__item:last-child {
+    padding-bottom: 4px;
+    margin-bottom: 0;
+}
+
+.projects-grid__item > div {
+    position: relative;    
+}
+
+.projects-grid__item.w50.h50 > div:not(.overlay) {
+    width: calc(50% - 4px);
+}
+
+.projects-grid__item.w50.h50 > div:first-child {
+    margin-right: 2px;
+}
+
+.projects-grid__item.w50.h50 > div:last-child {
+    margin-left: 2px;
+}
+
+.projects-grid__item.w25.h100 > div {
+    width: 100%;
+}
+
+.projects-grid__item.w25.h100 > div {
+    margin-bottom: 4px;
+}
+
+.projects-grid__item > div:first-child:last-child {
+    width: 100%;
+    margin: 0;
+}
+
+/* Project Item Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+}
+
+.cover:hover .overlay {
+    opacity: 1;
+}
