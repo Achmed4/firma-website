@@ -85,7 +85,7 @@ aside {
 /* Footer */
 footer p {
     margin-bottom: 0;
-    font-size: 0.7em;
+    font-size: 0.7rem;
     color: #999999;
 }
 
@@ -121,6 +121,10 @@ header a:hover {
     color: black;
 }
 
+.page-title h2 {
+    font-size: 1.75rem;
+}
+
 /* Filter Links */
 .filter-list {
     display: flex;
@@ -132,6 +136,7 @@ header a:hover {
 
 .filter-list__item a {
     color: #999;
+    font-size: 1.125rem;
 }
 
 .filter-list__item a:hover {
@@ -162,6 +167,18 @@ main {
     display: flex;
     flex-wrap: wrap;
     float: left;
+    animation: fade-in ease 0.4s forwards; 
+}
+
+@keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: scale(0);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
 }
 
 .projects-grid__item:last-child {
@@ -209,9 +226,21 @@ main {
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #008CBA;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+.overlay:hover {
+    text-decoration: none;
+    color: white;
 }
 
 .cover:hover .overlay {
     opacity: 1;
 }
+
+/* Media Queries
+========================================================================== */
