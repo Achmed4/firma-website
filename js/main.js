@@ -55,10 +55,16 @@ function showSlides(n, dir) {
 }
 
 var sliderNav = document.querySelector('.project-slider__nav');
-sliderNav.onclick = function(e) {
+document.onclick = function(e) {
     if(e.target.classList.contains('prev-btn')) {
         plusSlides(-1, 'up');
+        document.querySelector('.project-slider__info').classList.add('closed');
     } else if(e.target.classList.contains('next-btn')) {
         plusSlides(1, 'down');
+        document.querySelector('.project-slider__info').classList.add('closed');
+    } else if (e.target.classList.contains('btn-close')) {
+        document.querySelector('.project-slider__info').classList.add('closed');
+    } else if(e.target.classList.contains('nav-arrow')) {
+        document.querySelector('.project-slider__info').classList.remove('closed');
     }
 };
