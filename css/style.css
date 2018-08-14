@@ -80,6 +80,11 @@ aside {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom:  0;
+    padding: 50px;
 }
 
 /* Footer */
@@ -97,7 +102,8 @@ footer p:last-child {
 ========================================================================== */
 .main-wrapper {
     width: 100%;
-    overflow-y: auto;  
+    /* overflow-y: auto; */
+    margin-left: 240px;
 }
 
 /* Page Header */
@@ -168,6 +174,11 @@ main {
     flex-wrap: wrap;
     float: left;
     animation: fade-in ease 0.4s forwards; 
+}
+
+.projects-grid__item--active {
+    width: calc(50% - 4px);
+    height: 50%;
 }
 
 @keyframes fade-in {
@@ -273,6 +284,22 @@ main {
 }
 
 .project-slider__item.inactive {
+    animation-duration: 1s;
+    animation-name: slideout;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+    z-index: 2;
+}
+
+.parent-down .project-slider__item.inactive {
+    animation-duration: 1s;
+    animation-name: slidein;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+    z-index: 1;
+}
+
+.parent-down .project-slider__item.active {
     animation-duration: 1s;
     animation-name: slideout;
     animation-fill-mode: forwards;

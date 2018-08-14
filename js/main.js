@@ -4,8 +4,10 @@ $(document).ready(function(){
     var $btns = $('.filter-list a').click(function() {
         if (this.id == 'all') {
             $('.projects-grid > .projects-grid__item').fadeIn(500);
+            $('.projects-grid > .projects-grid__item').removeClass('projects-grid__item--active');
         } else {
             var $el = $('.' + this.id).fadeIn(500);
+            $el.addClass('projects-grid__item--active');
             $('.projects-grid > .projects-grid__item').not($el).hide();
         }
         $btns.parent().removeClass('active');
@@ -20,6 +22,11 @@ showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
+    if(n === -1) {
+        document.querySelector('.project-slider').classList.remove('parent-down');
+    } else if(n === 1) {
+        document.querySelector('.project-slider').classList.add('parent-down');
+    }
     showSlides(slideIndex += n);
 }
 
