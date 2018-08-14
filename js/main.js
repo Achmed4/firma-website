@@ -21,13 +21,8 @@ var slideIndex = 1;
 showSlides(slideIndex);
 
 // Next/previous controls
-function plusSlides(n) {
-    if(n === -1) {
-        document.querySelector('.project-slider').classList.remove('parent-down');
-    } else if(n === 1) {
-        document.querySelector('.project-slider').classList.add('parent-down');
-    }
-    showSlides(slideIndex += n);
+function plusSlides(n, dir) {
+    showSlides(slideIndex += n, dir);
 }
 
 // Thumbnail image controls
@@ -35,18 +30,35 @@ function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
-function showSlides(n) {
+function showSlides(n, dir) {
     var i;
     var slides = document.getElementsByClassName("project-slider__item");
     if (n > slides.length) {slideIndex = 1;} 
     if (n < 1) {slideIndex = slides.length;}
     for (i = 0; i < slides.length; i++) {
         slides[i].classList.remove('active', 'inactive');
-        if(i > (slideIndex-1)) {
-            slides[slideIndex].classList.add('inactive');
-        } else if(i === slides.length - 1) {
-            slides[0].classList.add('inactive');
+        if(dir === 'up') {
+            if(i > (slideIndex-1)) {
+                slides[slideIndex].classList.add('inactive');
+            } else if(i === slides.length - 1) {
+                slides[0].classList.add('inactive');
+            }
+        } else {
+            if(i < (slideIndex-1)) {
+                slides[slideIndex - 2].classList.add('inactive');
+            } else if((slideIndex-1) === 0) {
+                slides[slides.length-1].classList.add('inactive');
+            }
         }
     }
     slides[slideIndex-1].classList.add('active');
 }
+
+var sliderNav = document.querySelector('.project-slider__nav');
+sliderNav.onclick = function(e) {
+    if(e.target.classList.contains('prev-btn')) {
+        plusSlides(-1, 'up');
+    } else if(e.target.classList.contains('next-btn')) {
+        plusSlides(1, 'down');
+    }
+};

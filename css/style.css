@@ -352,6 +352,10 @@ main {
     outline: 0;
 }
 
+.project-slider__nav button * {
+    pointer-events: none;
+}
+
 .project-slider__nav button:first-child {
     border-bottom: 1px solid #6d6c6c;
 }
