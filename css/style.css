@@ -395,6 +395,7 @@ main {
 .project-slider__info.closed .nav-left,
 .project-slider__info.closed .nav-right {
     opacity:  0;
+    visibility: hidden;
     transition: 0s ease 0s;
 }
 
