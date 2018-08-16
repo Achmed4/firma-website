@@ -18,6 +18,7 @@ $(document).ready(function(){
 
 // init the slider
 var slideIndex = 1;
+if(document.querySelector('.project-slider'))
 showSlides(slideIndex);
 
 // Next/previous controls
