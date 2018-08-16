@@ -365,8 +365,8 @@ main {
 .project-slider__info {
     position: absolute;
     top: 50%;
-    left: 0;
-    transform: translate(-50%, -50%);
+    left: -30px;
+    transform: translateY(-50%);
     width: 200px;
     height: 300px;
     background-color: #7f7f7f;
