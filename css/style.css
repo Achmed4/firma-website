@@ -73,6 +73,17 @@ html {
     height: 100%;
 }
 
+/* Icon Hovers */
+.svg-inline--fa path {
+    fill: white;
+    transition: all 0.3s ease;
+}
+
+a:hover > .svg-inline--fa path,
+button:hover > .svg-inline--fa path {
+    fill: black;
+}
+
 /* Aside
 ========================================================================== */
 aside {
@@ -351,6 +362,11 @@ main {
     color: white;
     cursor: pointer;
     outline: 0;
+    transition: 0.3s ease;
+}
+
+.project-slider__nav button:hover {
+    color: black;
 }
 
 .project-slider__nav button * {
@@ -444,6 +460,7 @@ main {
     top: 0;
     right: 0;
     padding: 15px;
+    color: white;
     cursor: pointer;
 }
 
@@ -477,7 +494,6 @@ main {
 .projects-nav a {
     color: white;
     display: inline-block;
-    /* padding: 5px; */
     padding: 18px 22px;
     transition: 0.3s ease 1s;
 }
