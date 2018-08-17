@@ -20,7 +20,9 @@ ul {
     margin: 0;
 }
 
-/* Image like background cover */
+/**
+ *Image like background cover 
+ */
 .cover {
     overflow: hidden;
 }
@@ -34,7 +36,9 @@ ul {
     min-height: 1000%;
     transform: scale(0.1);
 }
-/* Image like background contain */
+/**
+ *Image like background contain 
+ */
 .contain img {
     position: absolute;
     left:-10000%; right: -10000%; 
@@ -45,14 +49,18 @@ ul {
     transform: scale(10);
 }
 
-/* Clearing Floats */
+/**
+ *Clearing Floats 
+ */
 .clearfix:after {
     content: "";
     display: table;
     clear: both;
 }
 
-/* Layouts */
+/**
+ *Layouts 
+ */
 .w25 {
     width: calc(25% - 4px);
 }
@@ -77,7 +85,9 @@ ul {
     height: 100%;
 }
 
-/* Icon Hovers */
+/**
+ *Icon Hovers
+ */
 .svg-inline--fa path {
     fill: white;
     transition: all 0.3s ease;
@@ -138,7 +148,9 @@ button:hover > .svg-inline--fa path {
     transform: translateY(-50%);
 }
 
-/* Hamburger Button */
+/**
+ *Hamburger Button
+ */
 .hamburger {
     font: inherit;
     overflow: visible;
@@ -268,9 +280,6 @@ button:hover > .svg-inline--fa path {
     transform: translate3d(0,10px,0) rotate(-45deg);
 }
 
-
-
-
 /* Aside
 ========================================================================== */
 aside {
@@ -285,7 +294,9 @@ aside {
     padding: 50px;
 }
 
-/* Logo */
+/**
+ *Logo
+ */
 .logo-mob {
     display: none;
 }
@@ -302,7 +313,9 @@ aside {
 
 .logo, .logo:hover {text-decoration: none;}
 
-/* Footer */
+/**
+ *Footer
+ */
 footer p {
     margin-bottom: 0;
     font-size: 0.7rem;
@@ -321,7 +334,9 @@ footer p:last-child {
     position: relative;
 }
 
-/* Page Header */
+/**
+ *Page Header
+ */
 header {
     height: 50px;
     display: flex;
@@ -338,6 +353,10 @@ header a:hover {
     text-decoration: none;
 }
 
+/* ===============
+   PORTFOLIO PAGE 
+   =============== */
+
 .page-title, .page-title:hover {
     color: black;
 }
@@ -346,7 +365,9 @@ header a:hover {
     font-size: 1.75rem;
 }
 
-/* Filter Links */
+/**
+ *Filter Links
+ */
 .filter-list {
     display: flex;
 }
@@ -368,7 +389,9 @@ header a:hover {
     color: black;
 }
 
-/* Projects Grid */
+/**
+ *Projects Grid
+ */
 main, .projects-grid {
     width: 100%;
 }
@@ -441,7 +464,9 @@ main {
     margin: 0;
 }
 
-/* Project Item Overlay */
+/** 
+ *Project Item Overlay 
+ */
 .overlay {
     position: absolute;
     top: 0;
@@ -468,7 +493,13 @@ main {
     opacity: 1;
 }
 
-/* Project Slider */
+/* ===============
+   PROJECT PAGE 
+   =============== */
+
+/** 
+ * Project Slider 
+ */
 .project-slider {
     position: relative;
     width: 100%;
@@ -506,22 +537,6 @@ main {
     z-index: 2;
 }
 
-.parent-down .project-slider__item.inactive {
-    animation-duration: 1s;
-    animation-name: slidein;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-    z-index: 1;
-}
-
-.parent-down .project-slider__item.active {
-    animation-duration: 1s;
-    animation-name: slideout;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-    z-index: 2;
-}
-
 @keyframes slidein {
     from {
         top: 0;
@@ -543,7 +558,9 @@ main {
     }
 }
 
-/* Slider Nav */
+/**
+ *Slider Nav
+ */
 .project-slider__nav {
     position: absolute;
     top: 50%;
@@ -581,7 +598,9 @@ main {
     border-bottom: 1px solid #6d6c6c;
 }
 
-/* Slider Info */
+/**
+ *Slider Info
+ */
 .project-slider__info {
     position: absolute;
     top: 50%;
@@ -637,7 +656,9 @@ main {
     transition: all 0.1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
-/* Projects info nav When closed */
+/**
+ *Projects info nav When closed
+ */
 .project-slider__info.closed .projects-nav {
     height: 100%;
     flex-direction: column;
@@ -730,23 +751,126 @@ main {
     /* Main Menu */
     .main-menu-container {
         width: 100%;
+        height: 80px;
+        padding: 0 20px;
         position: relative;
         transform: none;
-        left: 0;
+        top: 0;
+        left: 0;    
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        z-index: auto;
     }    
     
     .main-menu {
         width: 100%;
         display: flex;
-    }
-    
-    .main-menu-container.opened .hamburger {
-        transform: none;
-    }
+        position: fixed;
+    }    
 
     /* Hamburger */
     .hamburger {
         height: 40px;
         right: 30px;
+        position: relative;
+        top: 0;
+        right: auto;
+        transform: none;
     }
+
+    .main-menu-container.opened .hamburger {
+        transform: none;
+    }
+
+    /* Logo */
+    .logo {
+        display: none;
+    }
+
+    .logo-mob {
+        display: block;
+    }
+    
+    .logo-mob .logo-img {
+        width: 100px;
+    }
+    
+    .logo-mob .logo-tagline {
+        display: none;
+    }
+
+    /* Main Wrapper */
+    .main-wrapper {
+        margin: 0;
+        height: calc(100vh - 160px);
+    }
+
+    /* Aside */
+    aside {
+        position: relative;
+        width: 100%;
+        height: 80px;
+        padding: 10px;
+    }
+
+    /* Footer */
+    footer {
+        width: 100%;
+        text-align: center;
+    }
+
+    footer p:last-child {
+        display: inline-block;
+        margin-top: 5px;
+    }
+
+    /* Slider */
+    .project-slider {
+        height: 300px;
+    }
+
+    .project-slider__info,
+    .project-slider__info.closed {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        height: auto;
+    }
+    
+    .project-slider__nav {        
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 150px;
+        left: 0;
+        right: auto;
+        transform: translate(0, -50%);
+        background-color: transparent;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .project-slider__nav button {
+        width: 50px;
+        height: 50px;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .project-slider__nav button.prev-btn {
+        transform: rotate(-90deg);
+    }
+    
+    .project-slider__nav button.next-btn {
+        transform: rotate(-90deg);
+    }
+
 }
+
+
+
+
+
+
