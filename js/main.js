@@ -55,7 +55,7 @@ function showSlides(n, dir) {
     slides[slideIndex-1].classList.add('active');
 }
 
-var sliderNav = document.querySelector('.project-slider__nav');
+// Click Handlers
 document.onclick = function(e) {
     if(e.target.classList.contains('prev-btn')) {
         plusSlides(-1, 'up');
@@ -67,5 +67,8 @@ document.onclick = function(e) {
         document.querySelector('.project-slider__info').classList.add('closed');
     } else if(e.target.classList.contains('nav-arrow')) {
         document.querySelector('.project-slider__info').classList.remove('closed');
+    } else if(e.target.classList.contains('hamburger')) {
+        document.querySelector('.hamburger').classList.toggle('is-active');
+        document.querySelector('.main-menu-container').classList.toggle('opened');
     }
 };
