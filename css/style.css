@@ -749,6 +749,10 @@ main {
         flex-wrap: wrap;
     }
     /* Main Menu */
+    .main-menu-container.opened {
+        transform: none;
+    }
+
     .main-menu-container {
         width: 100%;
         height: 80px;
@@ -764,10 +768,46 @@ main {
     }    
     
     .main-menu {
-        width: 100%;
-        display: flex;
         position: fixed;
-    }    
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        align-content: center;
+        background-color: black;
+        transform: translateX(-100%);
+        transition: transform 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        z-index: 3;
+    }
+
+    .main-menu a {
+        color: white;
+    }
+
+    .main-menu-container.opened .main-menu {
+        transform: translateX(0%);
+    }
+
+    .main-menu__item {
+        width: 60%;
+    }
+
+    .sub-menu__item::before {
+        color: white;
+    }
+
+    .main-menu-container.opened .hamburger {
+        background-color: transparent;
+    }
+
+    .main-menu-container.opened .hamburger:hover .hamburger-inner:after, 
+    .main-menu-container.opened .hamburger:hover .hamburger-inner:before {
+        background-color: white;
+    }
 
     /* Hamburger */
     .hamburger {
@@ -777,6 +817,7 @@ main {
         top: 0;
         right: auto;
         transform: none;
+        z-index: 4;
     }
 
     .main-menu-container.opened .hamburger {
@@ -838,8 +879,29 @@ main {
         transform: none;
         width: 100%;
         height: auto;
+        background-color: white;
+        color: black;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .project-slider__info hr {
+        display: none;
     }
     
+    .project-slider__info .projects-nav {
+        position: relative;
+        display: none;
+    }    
+    
+    .project-slider__info .btn-close {
+        display: none;
+    }
+    
+    .projects-nav .svg-inline--fa path {
+        fill: black;
+    }
+
     .project-slider__nav {        
         position: absolute;
         width: 100%;
@@ -859,12 +921,25 @@ main {
         background-color: rgba(0, 0, 0, 0.5);
     }
 
+    .project-slider__nav button:first-child {
+        border-bottom: 0;
+    }
+
     .project-slider__nav button.prev-btn {
         transform: rotate(-90deg);
     }
     
     .project-slider__nav button.next-btn {
         transform: rotate(-90deg);
+    }
+
+    .project-slider__info.closed .btn-close, 
+    .project-slider__info.closed .project-name, 
+    .project-slider__info.closed .project-location, 
+    .project-slider__info.closed .project-category, 
+    .project-slider__info.closed hr {
+        opacity: 1;
+        visibility: visible;
     }
 
 }
